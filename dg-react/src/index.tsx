@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {DevSupport} from "@react-buddy/ide-toolbox";
 import {ComponentPreviews, useInitial} from "./dev";
 import NiceModal from '@ebay/nice-modal-react';
 import { BrowserRouter } from 'react-router-dom';
+import './index.css'
+
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );

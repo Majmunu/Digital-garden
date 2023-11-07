@@ -121,9 +121,9 @@ module.exports = function (webpackEnv) {
         loader: require.resolve('css-loader'),
         options: cssOptions,
       },
-      {
-        loader: require.resolve('less-loader'),
-      },
+      // {
+      //   loader: require.resolve('less-loader'),
+      // },
       {
         // Options for PostCSS as we reference these options twice
         // Adds vendor prefixing based on your specified browser support in
@@ -323,7 +323,7 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
-        '@':path.resolve('src')
+        '@': path.resolve(__dirname, 'src/'),
       },
       plugins: [
         // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -406,33 +406,33 @@ module.exports = function (webpackEnv) {
                 and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
               },
             },
-            {
-              test: lessRegex,
-              exclude: lessModuleRegex,
-              use: getStyleLoaders(
-                  {
-                    importLoaders: 2,
-                    sourceMap: isEnvProduction
-                        ? shouldUseSourceMap
-                        : isEnvDevelopment,
-                  },
-                  'less-loader'
-              ),
-              sideEffects: true,
-            },
-            {
-              test: lessModuleRegex,
-              use: getStyleLoaders(
-                  {
-                    importLoaders: 2,
-                    sourceMap: isEnvProduction
-                        ? shouldUseSourceMap
-                        : isEnvDevelopment,
-                  },
-                  'less-loader'
-              ),
-              sideEffects: true,
-            },
+            // {
+            //   test: lessRegex,
+            //   exclude: lessModuleRegex,
+            //   use: getStyleLoaders(
+            //       {
+            //         importLoaders: 2,
+            //         sourceMap: isEnvProduction
+            //             ? shouldUseSourceMap
+            //             : isEnvDevelopment,
+            //       },
+            //       'less-loader'
+            //   ),
+            //   sideEffects: true,
+            // },
+            // {
+            //   test: lessModuleRegex,
+            //   use: getStyleLoaders(
+            //       {
+            //         importLoaders: 2,
+            //         sourceMap: isEnvProduction
+            //             ? shouldUseSourceMap
+            //             : isEnvDevelopment,
+            //       },
+            //       'less-loader'
+            //   ),
+            //   sideEffects: true,
+            // },
             // Process application JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {

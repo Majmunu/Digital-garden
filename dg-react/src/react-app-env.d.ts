@@ -74,3 +74,7 @@ declare module '*.module.less' {
   export default classes;
 }
 declare module '*.less'
+
+declare module '@react-spring/three';
+declare module 'three';
+declare module '@react-three/fiber'
